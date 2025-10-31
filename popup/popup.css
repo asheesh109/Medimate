@@ -1,0 +1,288 @@
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --accent: #3b82f6;
+  --success: #10b981;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #334155;
+  --accent: #60a5fa;
+  --success: #34d399;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 360px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.container {
+  padding: 16px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+header .subtitle {
+  margin: 4px 0 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+
+.card h2 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.row {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.emoji-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.emoji {
+  cursor: pointer;
+  font-size: 24px;
+  padding: 8px;
+  border-radius: 8px;
+  user-select: none;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.emoji:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.emoji.selected {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+textarea,
+input[type="text"],
+input[type="time"],
+input[type="number"] {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  flex: 1;
+  min-width: 80px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.2s;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+button:disabled {
+  background: var(--muted);
+  cursor: not-allowed;
+}
+
+button.success {
+  background: var(--success);
+}
+
+button.success:hover {
+  background: #059669;
+}
+
+.breath-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.breath-controls select,
+.breath-controls button {
+  flex: 1;
+  width: auto;
+}
+
+.breath-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.breath-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  transition: transform 3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.breath-text {
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+#quote-text {
+  font-style: italic;
+  margin: 8px 0;
+  color: var(--text);
+  font-size: 15px;
+}
+
+#quote-author {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.quote-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.quote-controls button {
+  flex: 1;
+  width: auto;
+}
+
+.gratitude-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.gratitude-item {
+  display: flex;
+  gap: 8px;
+}
+
+.gratitude-item input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.gratitude-item button {
+  background: var(--success);
+  width: auto;
+  padding: 8px 12px;
+}
+
+.gratitude-item button:hover {
+  background: #059669;
+}
+
+.recent-entry {
+  background: rgba(16, 185, 129, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.streak {
+  text-align: center;
+  color: var(--success);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}

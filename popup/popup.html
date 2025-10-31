@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Medimate</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Medimate</h1>
+      <p class="subtitle">Daily tools for mental wellness</p>
+    </header>
+
+    <section id="mood-section" class="card">
+      <h2>Mood Check-In</h2>
+      <div id="emoji-row" class="emoji-row"></div>
+      <textarea id="mood-note" placeholder="How are you feeling today? (Optional)"></textarea>
+      <button id="save-mood">Log Mood</button>
+      <div id="recent-mood" class="recent-entry" style="display:none;"></div>
+      <div id="mood-streak" class="streak"></div>
+    </section>
+
+    <section id="gratitude-section" class="card">
+      <h2>Gratitude (3 Things)</h2>
+      <div class="gratitude-items" id="gratitude-items">
+        <!-- Items added by JS -->
+      </div>
+      <button id="save-gratitude">Save Gratitude</button>
+      <div id="recent-gratitude" class="recent-entry" style="display:none;"></div>
+    </section>
+
+    <section id="breath-section" class="card">
+      <h2>Guided Breathing</h2>
+      <div class="breath-controls">
+        <select id="breath-type">
+          <option value="box">Box Breathing (4-4-4-4)</option>
+          <option value="478">4-7-8 Relaxation</option>
+          <option value="diaphragmatic">Deep Belly Breaths (6s in/out)</option>
+        </select>
+        <button id="start-breath">Start</button>
+      </div>
+      <button id="stop-breath" disabled>Stop</button>
+      <div id="breath-visual" class="breath-visual" style="display:none;">
+        <div id="breath-circle" class="breath-circle"></div>
+        <div id="breath-text" class="breath-text"></div>
+      </div>
+    </section>
+
+    <section id="quote-section" class="card">
+      <h2>Daily Inspiration</h2>
+      <div id="quote-text"></div>
+      <div id="quote-author"></div>
+      <div class="quote-controls">
+        <button id="new-quote">Refresh</button>
+        <button id="open-options">Full Settings</button>
+      </div>
+    </section>
+
+    <section id="settings-section" class="card">
+      <h2>Reminders</h2>
+      <div class="row">
+        <label><input type="checkbox" id="enable-break"> Break</label>
+        <input type="number" id="break-minutes" min="10" max="240" value="60" size="3" /> min
+        <input type="text" id="break-message" placeholder="e.g., Take a break!" style="flex:1; min-width:120px;" />
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="enable-bedtime"> Bedtime</label>
+        <input type="time" id="bedtime-time" value="22:00" />
+        <input type="text" id="bedtime-message" placeholder="e.g., Time to rest" style="flex:1; min-width:120px;" />
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="enable-gratitude"> Gratitude</label>
+        <input type="time" id="gratitude-time" value="20:00" />
+        <input type="text" id="gratitude-message" placeholder="e.g., 3 things today?" style="flex:1; min-width:120px;" />
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="dark-mode-popup"> Dark mode</label>
+      </div>
+      <button id="save-settings">Save</button>
+    </section>
+
+    <footer>
+      <small>Medimate • Small steps, big impact</small>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

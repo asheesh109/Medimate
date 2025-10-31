@@ -1,0 +1,103 @@
+<!-- options.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Medimate Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Medimate — Settings</h1>
+
+    <section class="card">
+      <h2>Break Reminders</h2>
+      <label>
+        <input type="checkbox" id="enable-break"> Enable periodic break notifications
+      </label>
+      <div class="row">
+        <label>Every
+          <input type="number" id="break-minutes" min="10" max="240" value="60" /> minutes
+        </label>
+      </div>
+      <div class="row">
+        <label>Custom message</label>
+        <input type="text" id="break-message" placeholder="e.g., Stretch, hydrate, breathe — 5 minutes!" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Bedtime Reminder</h2>
+      <label>
+        <input type="checkbox" id="enable-bedtime"> Enable daily bedtime prompt
+      </label>
+      <div class="row">
+        <label>Time</label>
+        <input type="time" id="bedtime-time" value="22:00" />
+      </div>
+      <div class="row">
+        <label>Custom message</label>
+        <input type="text" id="bedtime-message" placeholder="e.g., Time to wind down. Prioritize rest tonight." />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Gratitude Prompt</h2>
+      <label>
+        <input type="checkbox" id="enable-gratitude"> Enable evening gratitude reminder
+      </label>
+      <div class="row">
+        <label>Time</label>
+        <input type="time" id="gratitude-time" value="20:00" />
+      </div>
+      <div class="row">
+        <label>Custom message</label>
+        <input type="text" id="gratitude-message" placeholder="e.g., Evening gratitude: What are 3 things you're thankful for today?" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Appearance</h2>
+      <label>
+        <input type="checkbox" id="dark-mode"> Dark mode
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Mood History</h2>
+      <div id="mood-history" class="mood-history"></div>
+      <div class="actions">
+        <button id="clear-mood-logs" class="danger">Clear Mood Logs</button>
+        <button id="export-mood" class="success">Export Mood Log (JSON)</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Gratitude History</h2>
+      <div id="gratitude-history" class="mood-history"></div>
+      <div class="actions">
+        <button id="clear-gratitude-logs" class="danger">Clear Gratitude Logs</button>
+        <button id="export-gratitude" class="success">Export Gratitude Log (JSON)</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Emergency Resources</h2>
+      <p>Quick access to support. These are global; adjust for your region.</p>
+      <ul id="resources-list" class="resources-list"></ul>
+    </section>
+
+    <div class="actions">
+      <button id="save-all">Save All Settings</button>
+    </div>
+
+    <footer>
+      <small>Medimate • Prioritizing your mental wellness, one reminder at a time</small>
+    </footer>
+  </div>
+
+  <a id="download-link" style="display:none"></a>
+  <script src="options.js"></script>
+</body>
+</html>
